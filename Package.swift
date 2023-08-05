@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "BinaryOnlyPackage",
-            targets: ["BinaryOnlyPackage", "Lottie", "MyTestFramework"]),
+            targets: ["BinaryOnlyPackage"]),
     ],
     dependencies: [
     ],
@@ -24,6 +24,6 @@ let package = Package(
               checksum: "335ccbceaff27fef4d95fc65239fd3722f1646dc34519c43dc3b5a852b446a33"),
         .target(
             name: "BinaryOnlyPackage",
-            dependencies: [])
+            dependencies: ["Lottie", "MyTestFramework"])
     ]
 )
