@@ -9,16 +9,11 @@ let package = Package(
     products: [
         .library(
             name: "BinaryOnlyPackage",
-            targets: ["BinaryOnlyPackage"]),
+            targets: ["BinaryOnlyPackage", "Lottie", "MyTestFramework"]),
     ],
     dependencies: [
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "BinaryOnlyPackage",
-            dependencies: ["Lottie", "MyTestFramework"]),
         .binaryTarget(
               name: "Lottie",
               url: "https://github.com/airbnb/lottie-ios/releases/download/4.2.0/Lottie.xcframework.zip",
@@ -26,6 +21,9 @@ let package = Package(
         .binaryTarget(
               name: "MyTestFramework",
               url: "https://github.com/vishwa8816/MyTestFrameworkA/releases/download/Third/MyTestFramework.xcframework.zip",
-              checksum: "335ccbceaff27fef4d95fc65239fd3722f1646dc34519c43dc3b5a852b446a33")
+              checksum: "335ccbceaff27fef4d95fc65239fd3722f1646dc34519c43dc3b5a852b446a33"),
+        .target(
+            name: "BinaryOnlyPackage",
+            dependencies: [])
     ]
 )
